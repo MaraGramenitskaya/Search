@@ -14,6 +14,12 @@ export default function App() {
         }
     };
 
+    const update = (title) => {
+        let str = title.split('').splice(0, 4).join('') + '...';
+        setSearch(str);
+        setDisplay(false);
+    }
+
     useEffect(() => {
         window.addEventListener('mousedown', handleClickOutSide)
         fetch('https://jsonplaceholder.typicode.com/photos?_limit=25&#39')
@@ -33,8 +39,7 @@ export default function App() {
                 {display && data
                     .filter(el => el.title.includes(search))
                     .map(el =>
-                        <div className='item' key={el.id}>
-                            <span>{el.title}</span>
+                        <div className="item" key={el.id} onClick={() => update(el.title)}>                            <span>{el.title}</span>
                             <img src={el.thumbnailUrl} alt="" width="20px" height="20px" />
                         </div>
                     )}

@@ -1,8 +1,16 @@
+:root {
+    --yellow: #fcdd26;
+    --grey: #333;
+    --whiteYellow:rgb(222, 205, 173);
+    --lightGreen:#02b308;
+    --green:#054f07;
+}
+
 body {
     background-color: black;
-    color: rgb(207, 182, 137);
     display: flex;
     justify-content: center;
+    color: var(--whiteYellow);
 }
 
 .App {
@@ -19,27 +27,41 @@ input {
     border-radius: 10px;
     height: 50px;
     font-size: 20px;
-    background: #02b308;
+    background: var(--lightGreen);
     border: none;
     padding: 0 5px;
-    color: rgb(222, 205, 173);
+    color: var(--whiteYellow);
     margin: 10px;
 }
 
 input::placeholder {
-    color: rgb(222, 205, 173);
+    color:  var(--whiteYellow);
 }
 
 .container {
-    background-color: #054f07;
+    background-color: var(--green);
     width: 410px;
     max-height: 410px;
     border-radius: 10px;
     overflow-y: auto;
     font-size: 20px;
-    scrollbar-width: thin;
 }
 
 .item {
     padding: 10px;
+}
+
+.container::-webkit-scrollbar {
+    width: 0.7rem;
+
+}
+
+.container::-webkit-scrollbar-track {
+    background: var(--grey);
+    border-radius: .5rem;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-radius: .5rem;
 }
